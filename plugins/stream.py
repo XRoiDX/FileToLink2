@@ -24,7 +24,7 @@ async def private_receive_handler(c: Client, m: Message):
     is_allowed, remaining_time = await is_user_allowed(user_id)
     if not is_allowed:
         return await m.reply_text(
-            f"🚫 **आप 10 फाइल पहले ही भेज चुके हैं!**\nकृपया **{remaining_time} सेकंड** बाद फिर से प्रयास करें।",
+            f"🚫 **You have already sent 10 files!**\nTime **{remaining_time} Seconds** try after this remaining time",
             quote=True
         )
 
